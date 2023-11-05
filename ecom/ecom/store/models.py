@@ -19,13 +19,9 @@ class Product(models.Model):
     count = models.IntegerField()
     sku = models.CharField(max_length=9)
     file_id = models.CharField(max_length=50)
-    # image = models.ImageField(upload_to='uploads/product/', default='uploads/product/AgACAgIAAxkBAAIK02UiuKzQ-VDRQKrq6BylDvUw8hlaAAIbzzEb6NwRSSz-TCtBgE6vAQADAgADeAADMAQ.png')
 
-    class Meta:
-        managed = False
-        # db_table = 'Product'
-        # app_label = 'store'
-        db_table = 'shopdatabase.Product'
+    def __str__(self):
+        return self.name
 
 
 class User(models.Model):
@@ -36,7 +32,7 @@ class User(models.Model):
     user_role = models.CharField(max_length=10)
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return self.first_name
 
 
 class Order(models.Model):
