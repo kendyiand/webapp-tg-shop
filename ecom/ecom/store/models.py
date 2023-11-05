@@ -20,6 +20,9 @@ class Product(models.Model):
     sku = models.CharField(max_length=9)
     file_id = models.CharField(max_length=50)
 
+    class Meta:
+        db_table = 'product'
+
     def __str__(self):
         return self.name
 
@@ -30,6 +33,9 @@ class User(models.Model):
     last_name = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     user_role = models.CharField(max_length=10)
+
+    class Meta:
+        db_table = 'users'
 
     def __str__(self):
         return self.first_name
