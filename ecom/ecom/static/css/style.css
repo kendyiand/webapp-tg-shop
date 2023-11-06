@@ -117,17 +117,33 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.product__controls {
-    display: flex;
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.product__button {
+a .product__controls {
+    display: flex;
+
+}
+a .product__controls:hover {
+    cursor: pointer;
+}
+a .product__button {
+    font-weight: 600;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     padding: 10px;
     background-color: #333947;
     border-radius: 12px;
     display: flex;
     justify-content: center;
-    gap: 5px    ;
+    gap: 5px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+a .product__button:active {
+    background-color: #454d60;
 }
 .no-stock {
     color: #bd5454;

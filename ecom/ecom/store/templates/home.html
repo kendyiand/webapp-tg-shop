@@ -8,7 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../static/css/style.css" rel="stylesheet" type="text/css">
-    <title>Document</title>
+    <title>Shop</title>
 </head>
 <body>
     <section class="app-container">
@@ -25,9 +25,11 @@
 
             {% for product in products %}
             <div class="product">
-                <div class="product__image">
-                    <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
-                </div>
+                <a href="#">
+                    <div class="product__image">
+                        <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
+                    </div>
+                </a>
                 <div class="product__info">
                     <h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
                         {% if product.count == 0 %}
@@ -40,12 +42,14 @@
                         {{ product.name }}
                     </p>
                 </div>
-                <div class="product__controls">
-                    <div class="product__button">
-                        <i class="fa-solid fa-plus"></i>
-                        Add to cart
+                <a href="">
+                    <div class="product__controls">
+                        <div class="product__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Add to cart
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
 
