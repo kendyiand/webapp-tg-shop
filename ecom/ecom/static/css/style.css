@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: start;
     color: white;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 .app-container {
@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     background-color: #333947;
     padding: 20px;
-    gap: 50px;
+    gap: 30px;
     overflow: hidden;
 }
 .header {
@@ -36,6 +36,10 @@ body {
     width: 100%;
     flex-wrap: nowrap;
     gap: 18px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
 
 }
@@ -83,7 +87,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-    overflow: scroll;
+    overflow-y: auto;
 
 }
 .product {
