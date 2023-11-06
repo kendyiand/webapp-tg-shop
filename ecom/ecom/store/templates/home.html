@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="../../static/css/style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="product__info">
                     <h1 class="product__price">
-                        {{ product.price }} Br
+                        {{ product.price|floatformat }} Br
                     </h1>
                     <p class="product__name">
                         {{ product.name }}
