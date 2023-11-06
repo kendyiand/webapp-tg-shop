@@ -29,8 +29,12 @@
                     <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
                 </div>
                 <div class="product__info">
-                    <h1 class="product__price">
-                        {{ product.price|floatformat }} Br
+                    <h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
+                        {% if product.count == 0 %}
+                            Out of stock
+                        {% else %}
+                            {{ product.price|floatformat }} Br
+                        {% endif %}
                     </h1>
                     <p class="product__name">
                         {{ product.name }}

@@ -129,3 +129,8 @@ body {
     justify-content: center;
     gap: 5px    ;
 }
+.no-stock {
+    color: #bd5454;
+    font-size: 150%;
+}
+
