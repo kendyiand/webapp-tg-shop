@@ -24,33 +24,68 @@
         <main class="products">
 
             {% for product in products %}
-            <div class="product">
-                <a href="#">
-                    <div class="product__image">
-                        <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
-                    </div>
-                </a>
-                <div class="product__info">
-                    <h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
-                        {% if product.count == 0 %}
-                            Out of stock
-                        {% else %}
-                            {{ product.price|floatformat }} Br
-                        {% endif %}
-                    </h1>
-                    <p class="product__name">
-                        {{ product.name }}
-                    </p>
-                </div>
-                <a href="">
-                    <div class="product__controls">
-                        <div class="product__button">
-                            <i class="fa-solid fa-plus"></i>
-                            Add to cart
+                {% if product.is_sale %}
+                <div class="product">
+                    <a href="#">
+                        <div class="product__image">
+                            <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
                         </div>
+                    </a>
+                    <div class="product__info">
+                        <h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
+                            {% if product.count == 0 %}
+                                Out of stock
+                            {% else %}
+<!--                                <strike>-->
+<!--                                    {{ product.price|floatformat }} Br-->
+<!--                                </strike>-->
+                                {{ product.sale_price|floatformat }}
+                                <span class="sale_price"><strike>{{product.price}}</strike></span>
+                            {% endif %}
+                        </h1>
+                        <p class="product__name">
+                            {{ product.name }}
+                        </p>
                     </div>
-                </a>
-            </div>
+                    <a href="">
+                        <div class="product__controls">
+                            <div class="product__button">
+                                <i class="fa-solid fa-plus"></i>
+                                Add to cart
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% else %}
+                <div class="product">
+                    <a href="#">
+                        <div class="product__image">
+                            <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
+                        </div>
+                    </a>
+                    <div class="product__info">
+                        <h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
+                            {% if product.count == 0 %}
+                                Out of stock
+                            {% else %}
+                                {{ product.price|floatformat }} Br
+                            {% endif %}
+                        </h1>
+                        <p class="product__name">
+                            {{ product.name }}
+                        </p>
+                    </div>
+                    <a href="">
+                        <div class="product__controls">
+                            <div class="product__button">
+                                <i class="fa-solid fa-plus"></i>
+                                Add to cart
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                {% endif %}
             {% endfor %}
 
         </main>

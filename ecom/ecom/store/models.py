@@ -18,7 +18,11 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     count = models.IntegerField()
     sku = models.CharField(max_length=9)
-    file_id = models.CharField(max_length=50)
+    file_id = models.CharField(max_length=100)
+
+    #discount
+    is_sale = models.BooleanField(default=False)
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     class Meta:
         db_table = 'product'

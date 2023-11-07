@@ -153,4 +153,8 @@ a .product__button:active {
     color: #bd5454;
     font-size: 150%;
 }
+.sale_price {
+    font-size: 14px;
+    font-weight: 400;
+}
 
