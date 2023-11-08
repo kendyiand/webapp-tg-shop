@@ -16,8 +16,10 @@
 
             {% for product in products %}
                 {% if product.is_sale %}
+
+<!--                discount product-->
                 <div class="product">
-                    <a href="#">
+                    <a href="{% url 'product' product.id %}">
                         <div class="product__image">
                             <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
                         </div>
@@ -27,9 +29,6 @@
                             {% if product.count == 0 %}
                                 Out of stock
                             {% else %}
-<!--                                <strike>-->
-<!--                                    {{ product.price|floatformat }} Br-->
-<!--                                </strike>-->
                                 {{ product.sale_price|floatformat }}
                                 <span class="sale_price"><strike>{{product.price}}</strike></span>
                             {% endif %}
@@ -48,8 +47,10 @@
                     </a>
                 </div>
                 {% else %}
+
+<!--                default product-->
                 <div class="product">
-                    <a href="#">
+                    <a href="{% url 'product' product.id %}">
                         <div class="product__image">
                             <img src=' ../../static/pictures/{{ product.file_id }}.png' alt="product">
                         </div>
