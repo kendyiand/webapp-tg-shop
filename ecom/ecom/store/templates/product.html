@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if product.is_sale %}
+<img src="../../static/pictures/{{ product.file_id }}.png" alt="">
+<h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
+    {% if product.count == 0 %}
+        Out of stock
+    {% else %}
+        {{ product.sale_price|floatformat }} Br
+        <span class="sale_price"><strike>{{product.price|floatformat}}</strike></span>
+    {% endif %}
+</h1>
+<p class="product__name">
+    {{ product.name }}
+</p>
 
+{% else %}
+<img src="../../static/pictures/{{ product.file_id }}.png" alt="">
+<h1 class="product__price {% if product.count == 0 %}no-stock{% endif %}">
+    {% if product.count == 0 %}
+        Out of stock
+    {% else %}
+        {{ product.price|floatformat }} Br
+    {% endif %}
+</h1>
+<p class="product__name">
+    {{ product.name }}
+</p>
+<p>
+    {{ product.sku }}
+</p>
+{% endif %}
 {% endblock %}
