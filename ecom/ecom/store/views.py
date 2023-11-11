@@ -3,7 +3,7 @@ from .models import Product
 
 
 def home(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('id')
     return render(request, 'home.html', {'products': products})
 
 
