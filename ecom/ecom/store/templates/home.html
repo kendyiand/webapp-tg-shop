@@ -29,8 +29,8 @@
                             {% if product.count == 0 %}
                                 Out of stock
                             {% else %}
-                                {{ product.sale_price|floatformat }}
-                                <span class="sale_price"><strike>{{product.price}}</strike></span>
+                                {{ product.sale_price|floatformat }} Br
+                                <span class="sale_price"><strike>{{product.price|floatformat}}</strike></span>
                             {% endif %}
                         </h1>
                         <p class="product__name">
