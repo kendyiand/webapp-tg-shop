@@ -157,4 +157,7 @@ a .product__button:active {
     font-size: 14px;
     font-weight: 400;
 }
+.product__product-image {
+    border-radius: 10px;
+}
 
